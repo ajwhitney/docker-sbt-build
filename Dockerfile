@@ -1,8 +1,13 @@
 FROM ubuntu:xenial
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # for add-apt-repository
 RUN apt-get -qq -y update
 RUN apt-get -qq -y install software-properties-common python-software-properties
+
+# Useful Utils
+RUN apt-get install curl
 
 # Install Java 8
 RUN add-apt-repository -y ppa:webupd8team/java
