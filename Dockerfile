@@ -12,7 +12,7 @@ RUN apt-get install -qq -y oracle-java8-installer
 ENV JAVA_HOME $(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 
 # Install Scala and SBT
-ENV SCALA_VERSION "2.11.8"
+ENV SCALA_VERSION "2.11.11"
 RUN apt-get remove scala-library scala
 RUN wget "www.scala-lang.org/files/archive/scala-$SCALA_VERSION.deb"
 RUN dpkg -i scala-"$SCALA_VERSION".deb
