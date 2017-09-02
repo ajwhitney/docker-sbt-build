@@ -25,7 +25,12 @@ ENV SBT_VERSION 0.13.16
 RUN \
   curl -fsL https://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /root/ && \
   echo >> /root/.bashrc && \
-  echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /root/.bashrc
+  echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /root/.bashrc && \
+  ln -s ~/scala-$SCALA_VERSION/bin/scala /usr/bin/scala && \
+  ln -s ~/scala-$SCALA_VERSION/bin/scalac /usr/bin/scalac && \
+  ln -s ~/scala-$SCALA_VERSION/bin/scaladoc /usr/bin/scaladoc && \
+  ln -s ~/scala-$SCALA_VERSION/bin/scalap /usr/bin/scalap && \
+  ln -s ~/scala-$SCALA_VERSION/bin/fsc /usr/bin/fsc
 
 # Install sbt
 RUN \
