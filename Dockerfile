@@ -9,7 +9,7 @@ RUN add-apt-repository -y ppa:webupd8team/java
 RUN apt-get -qq -y update
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN apt-get install -qq -y oracle-java8-installer
-RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
+ENV JAVA_HOME $(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 
 # Install Scala and SBT
 ENV SCALA_VERSION "2.11.8"
