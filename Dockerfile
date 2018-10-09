@@ -17,7 +17,7 @@ RUN apt-get install -qq -y oracle-java8-installer
 ENV JAVA_HOME $(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 
 # Install Scala and SBT
-ENV SCALA_VERSION 2.11.11
+ENV SCALA_VERSION 2.12.7
 ENV SBT_VERSION 0.13.16
 
 # Install Scala
